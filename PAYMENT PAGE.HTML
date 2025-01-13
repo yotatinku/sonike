@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Payment Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #69dfa4, #6ba7f5);
+            color: #fff;
+        }
+
+        .payment-container {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            width: 400px;
+            text-align: center;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        .payment-container h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .qr-code {
+            margin: 20px 0;
+            background: #fff;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        .qr-code img {
+            width: 250px;
+            height: 250px;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+
+        .payment-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .payment-options button {
+            background: #ff7f50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .payment-options button:hover {
+            background: #ff6347;
+        }
+
+        .note {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="payment-container">
+        <h1>Complete Your Payment</h1>
+        <div class="qr-code">
+            <img src="download.png" alt="QR Code" id="qr-code-img">
+        </div>
+        <div class="payment-options">
+            <button id="download-btn">Download QR Code</button>
+            <button id="pay-now-btn">Pay Now via UPI</button>
+        </div>
+        <p class="note">Scan the QR code or use the "Pay Now" button to complete your payment through a UPI app.</p>
+    </div>
+
+    <script>
+        document.getElementById('download-btn').addEventListener('click', () => {
+            const qrCodeImg = document.getElementById('qr-code-img');
+            const link = document.createElement('a');
+            link.href = qrCodeImg.src;
+            link.download = 'upi_qr_code.png';
+            link.click();
+        });
+
+        document.getElementById('pay-now-btn').addEventListener('click', () => {
+            const upiLink = "upi://pay?pa=example@upi&pn=Sonik%20Enterprises&mc=0000&tid=1234567890&tr=TRX12345&tn=Payment&am=100.00&cu=INR";
+            window.location.href = upiLink;
+        });
+    </script>
+</body>
+</html>

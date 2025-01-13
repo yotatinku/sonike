@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Plans</title>
+
+    <style>
+          body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+    .navbar {
+        display: flex;
+        justify-content:end;
+        align-items: center;
+        background-color: #333;
+        padding: 0.5rem 1rem;
+    }
+    .navbar a {
+        color: white;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+    }
+    .navbar a:hover {
+        background-color: #575757;
+        border-radius: 5px;
+    }
+    .navbar .brand {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+    .navbar .nav-links {
+        display: flex;
+    }
+       
+        .pricing-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            padding: 50px;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .pricing-card {
+            background: #fff;
+            border: none;
+            border-radius: 12px;
+            width: 320px;
+            text-align: left;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .pricing-header {
+            background: linear-gradient(135deg, #69dfa4, #6ba7f5);
+            color: #fff;
+            padding: 30px 20px;
+            font-size: 24px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .pricing-header i {
+            font-size: 28px;
+        }
+
+        .pricing-price {
+            font-size: 40px;
+            font-weight: bold;
+            margin: 20px 0;
+            color: #000000;
+            text-align: center;
+        }
+
+        .pricing-features {
+            list-style-type: none;
+            padding: 0;
+            margin: 0 20px 20px 20px;
+        }
+
+        .pricing-features li {
+            margin: 15px 0;
+            font-size: 16px;
+            color: #555;
+            position: relative;
+            padding-left: 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .pricing-features li::before {
+            content: '\2713';
+            color: #6a11cb;
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 16px;
+        }
+
+        .dropdown {
+            display: none;
+            margin-left: 20px;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .dropdown li {
+            font-size: 14px;
+            color: #555;
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .dropdown img {
+            width: 20px;
+            height: 20px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .icon {
+            font-size: 12px;
+            margin-left: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .icon.rotate {
+            transform: rotate(90deg);
+        }
+
+        .pricing-button {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 12px 25px;
+            background: linear-gradient(135deg, #69dfa4, #6ba7f5);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s ease;
+        }
+
+        .pricing-button:hover {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+        }
+
+        @media (max-width: 768px) {
+            .pricing-container {
+                flex-direction: column;
+            }
+        }
+    
+  
+</style>
+</head>
+<body>
+<nav class="navbar">
+        <div class="brand">
+        
+        <a href="index.html" class="nav-item nav-link active">Home</a>
+        <a href="index.html" class="nav-item nav-link">About</a>
+        <a href="index.html" class="nav-item nav-link">Service</a>
+        <a href="index.html" class="nav-item nav-link">Team</a>
+        <a href="index.html" class="nav-item nav-link">Contact</a>
+        <a href="price.html" class="nav-item nav-link">Price</a>
+    </div>
+</nav>
+
+
+    <body>
+        <div class="pricing-container">
+            <!-- Normal Plan -->
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <i>&#128204;</i> Normal Plan
+                </div>
+                <div class="pricing-price"><i>₹49/month</i></div>
+                <ul class="pricing-features">
+                    <li onclick="toggleDropdown('id01', this)">
+                        CCTV Service <span class="icon">&#9654;</span>
+                    </li>
+                    <ul class="dropdown" id="id01">
+                        <li><img src="sonik/img01.png" alt="Hikvision"> Hikvision</li>
+                        <li><img src="sonik/img02.png" alt="Dahua"> Dahua</li>
+                        <li><img src="sonik/img03.jpeg" alt="Sony"> Sony</li>
+                    </ul>
+                    <li>Fire Extinguisher Service</li>
+                    <li>Product Service Within 1 week</li>
+                    <li>Pay Traveling charge 10rs/km</li>
+                </ul>
+                <a href="PAYMENT PAGE.HTML" class="pricing-button">Choose Plan</a>
+            </div>
+            <!-- Business Plan -->
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <i>&#128188;</i> Pro Plan
+                </div>
+                <div class="pricing-price"><i>₹199/month</i></div>
+                <ul class="pricing-features">
+                    <li onclick="toggleDropdown('id002', this)">
+                        Fire Extinguisher Service <span class="icon">&#9654;</span>
+                    </li>
+                    <ul class="dropdown" id="id002">
+                        <li><img src="sonik/img001.jpeg" alt="Ceasefire"> Ceasefire</li>
+                        <li><img src="sonik/img002.png" alt="Safex"> Safex</li>
+                        <li><img src="sonik/img003.png" alt="Eco"> Eco</li>
+                    </ul>
+                    <li onclick="toggleDropdown('id003', this)">
+                        GST Software <span class="icon">&#9654;</span>
+                    </li>
+                    <ul class="dropdown" id="id003">
+                        <li><img src="sonik/img0001.png" alt="Tally"> Tally</li>
+                        <li><img src="sonik/img0002.jpeg" alt="Excel"> Excel</li>
+                        <li><img src="sonik/img0003.jpeg" alt="Canva"> Canva</li>
+                    </ul>
+                    <li>2 month Free GST Software</li>
+                    <li>Product Service Within 2 Day</li>
+                    <li>No Traveling Charges </li>
+                </ul>
+                <a href="PAYMENT PAGE.HTML" class="pricing-button">Choose Plan</a>
+            </div>
+            <!-- Pro Plan -->
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <i>&#128204;</i> Normal Plan
+                </div>
+                <div class="pricing-price"><i>₹499/month</i></div>
+
+
+                <ul class="pricing-features">
+                    <li onclick="toggleDropdown('id0003', this)">
+                        CCTV Service <span class="icon">&#9654;</span>
+                    </li>
+                    <ul class="dropdown" id="id0003">
+                        <li>
+                            <img src="sonik/img01.png" alt="Hikvision"> Hikvision
+                        </li>
+                        <li>
+                            <img src="sonik/img02.png" alt="Dahua"> Dahua
+                        </li>
+                        <li>
+                            <img src="sonik/img03.jpeg" alt="Sony"> Sony
+                        </li>
+                    </ul>
+                    <li onclick="toggleDropdown('id0002', this)">
+                        Fire Extinguisher Service <span class="icon">&#9654;</span>
+                    </li>
+                    <ul class="dropdown" id="id0002">
+                        <li>
+                            <img src="sonik/img001.jpeg" alt="Ceasefire"> Ceasefire
+                        </li>
+                        <li>
+                            <img src="sonik/img002.png" alt="Safex"> Safex
+                        </li>
+                        <li>
+                            <img src="sonik/img003.png" alt="Eco"> Eco
+                        </li>
+                    </ul>
+                    <li onclick="toggleDropdown('id0001', this)">
+                        GST Softwere <span class="icon">&#9654;</span>
+                    </li>
+                    <ul class="dropdown" id="id0001">
+                        <li>
+                            <img src="sonik/img0001.png" alt="Hikvision"> tally
+                        </li>
+                        <li>
+                            <img src="sonik/img0002.jpeg" alt="Dahua"> excel
+                        </li>
+                        <li>
+                            <img src="sonik/img0003.jpeg" alt="Sony"> canva
+                        </li>
+                    </ul>
+                    </li>
+                    <li onclick="toggleDropdown('id0004', this)">
+                        sony gss <span class="icon">&#9654;</span>
+                    </li>
+                    <ul class="dropdown" id="id0004">
+                        <li>
+                            <img src="sonik/img01.png" alt="Hikvision"> tally
+                        </li>
+                        <li>
+                            <img src="sonik/img02.png" alt="Dahua"> excel
+                        </li>
+                        <li>
+                            <img src="sonik/img03.jpeg" alt="Sony"> canva
+                        </li>
+                    </ul>
+                    </li>
+                    <li>Free Lifetime GST Software</li>
+                    <li>Product Service Within 1 Day</li>
+                    <li>No Traveling Charges </li>
+                    <li>Service by Verified Engineers </li>
+                </ul>
+                <a href="PAYMENT PAGE.HTML" class="pricing-button">Choose Plan</a>
+            </div>
+
+            <!-- Add Pro and Business Plan here, keeping the same style -->
+        </div>
+
+        <script>
+            function toggleDropdown(id, element) {
+                const dropdown = document.getElementById(id);
+                const icon = element.querySelector('.icon');
+                if (dropdown.style.display === 'block') {
+                    dropdown.style.display = 'none';
+                    icon.classList.remove('rotate');
+                } else {
+                    dropdown.style.display = 'block';
+                    icon.classList.add('rotate');
+                }
+            }
+        </script>
+        
+    </body>
+
+</html>
